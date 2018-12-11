@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sitexa.dao.SysOrgMapper">
+    <resultMap id="BaseResultMap" type="com.sitexa.pojo.SysOrg">
+        <constructor>
+            <arg column="oid" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="oname" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="pid" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="olevel" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="otype" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="oaddr" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="ocode" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="onature" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="onaturename" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="status" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="created" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <arg column="updated" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+        </constructor>
+    </resultMap>
+    <insert id="insert" parameterType="com.sitexa.pojo.SysOrg">
+        insert into sys_org (oid,
+                             oname,
+                             pid,
+                             olevel,
+                             otype,
+                             oaddr,
+                             ocode,
+                             onature,
+                             onaturename,
+                             status,
+                             created,
+                             updated)
+        values (#{oid,jdbcType=VARCHAR},
+                #{oname,jdbcType=VARCHAR},
+                #{pid,jdbcType=VARCHAR},
+                #{olevel,jdbcType=INTEGER},
+                #{otype,jdbcType=VARCHAR},
+                #{oaddr,jdbcType=VARCHAR},
+                #{ocode,jdbcType=VARCHAR},
+                #{onature,jdbcType=VARCHAR},
+                #{onaturename,jdbcType=VARCHAR},
+                #{status,jdbcType=INTEGER},
+                #{created,jdbcType=TIMESTAMP},
+                #{updated,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" parameterType="com.sitexa.pojo.SysOrg">
+        insert into sys_org
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="oid != null">
+                oid,
+            </if>
+            <if test="oname != null">
+                oname,
+            </if>
+            <if test="pid != null">
+                pid,
+            </if>
+            <if test="olevel != null">
+                olevel,
+            </if>
+            <if test="otype != null">
+                otype,
+            </if>
+            <if test="oaddr != null">
+                oaddr,
+            </if>
+            <if test="ocode != null">
+                ocode,
+            </if>
+            <if test="onature != null">
+                onature,
+            </if>
+            <if test="onaturename != null">
+                onaturename,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="created != null">
+                created,
+            </if>
+            <if test="updated != null">
+                updated,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="oid != null">
+                #{oid,jdbcType=VARCHAR},
+            </if>
+            <if test="oname != null">
+                #{oname,jdbcType=VARCHAR},
+            </if>
+            <if test="pid != null">
+                #{pid,jdbcType=VARCHAR},
+            </if>
+            <if test="olevel != null">
+                #{olevel,jdbcType=INTEGER},
+            </if>
+            <if test="otype != null">
+                #{otype,jdbcType=VARCHAR},
+            </if>
+            <if test="oaddr != null">
+                #{oaddr,jdbcType=VARCHAR},
+            </if>
+            <if test="ocode != null">
+                #{ocode,jdbcType=VARCHAR},
+            </if>
+            <if test="onature != null">
+                #{onature,jdbcType=VARCHAR},
+            </if>
+            <if test="onaturename != null">
+                #{onaturename,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="created != null">
+                #{created,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updated != null">
+                #{updated,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+</mapper>
