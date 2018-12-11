@@ -1,6 +1,6 @@
 package com.sitexa.dao;
 
-import com.sitexa.pojo.SysOrg;
+import com.sitexa.entity.SysOrg;
 
 public interface SysOrgMapper {
     int insert(SysOrg record);
