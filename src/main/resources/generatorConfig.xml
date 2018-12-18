@@ -59,10 +59,13 @@
             <!-- 针对 oracle 数据库的一个配置，是否把 schema 作为字包名 -->
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
-        <table tableName="sys_org" domainObjectName="SysOrg"
+        <!--table tableName="sys_org" domainObjectName="SysOrg"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-        </table>
+               selectByExampleQueryId="false"/ -->
+        <table tableName="bs_org" domainObjectName="BsOrg" enableUpdateByExample="false"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+
     </context>
 </generatorConfiguration>
