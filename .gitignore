@@ -5,6 +5,8 @@ build/
 logs/
 out/
 target/
+dist/
+doc/
 
 npm-debug.log*
 yarn-debug.log*
